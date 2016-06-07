@@ -11,8 +11,14 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+/*
+    Classe para criar a tabela e mostrar os dados necessários de cada professor, linha e programa
+*/
 public class DesenhaTabela extends JFrame {
     
+    /*
+        Cria a tabela com suas colunas 
+    */
     public void criaJanela(Programa programa){
         
         JPanel painelFundo;
@@ -60,6 +66,9 @@ public class DesenhaTabela extends JFrame {
         preencherTabela(modelo,programa);
     }
     
+    /*
+        Preenche cada uma das colunas da tabela
+    */
     public void preencherTabela(DefaultTableModel modelo, Programa programa) {
 		modelo.setNumRows(0);
                 
@@ -73,6 +82,9 @@ public class DesenhaTabela extends JFrame {
 		adicionaPrograma(modelo, programa);
 	}
     
+    /*
+        adiciona cada linha dos professores com seus atributos necessários
+    */
     public void adicionarProfessor(DefaultTableModel modelo, Professor professor) {
        
         modelo.addRow(new Object[]{professor.getNome(),0,
@@ -86,6 +98,9 @@ public class DesenhaTabela extends JFrame {
                                                    professor.getNumeroOrientacaoDoutoradoAndamento(),professor.getNumeroOrientacaoMestradoAndamento(),professor.getNumeroOrientacaoGraduacaoAndamento()});
     }
     
+    /*
+        adiciona cada linha de linha de pesquisa com seus atributos necessários
+    */
     public void adicionarLinhaDePesquisa (DefaultTableModel modelo, LinhaDePesquisa linha) {
         
         Somatorio soma = new Somatorio();
@@ -102,6 +117,9 @@ public class DesenhaTabela extends JFrame {
         
     }
     
+    /*
+        adiciona a linha de programa com seus atributos necessários
+    */
     public void adicionaPrograma(DefaultTableModel modelo, Programa programa) {
         
         Somatorio soma = new Somatorio();

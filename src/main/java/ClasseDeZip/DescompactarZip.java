@@ -12,15 +12,19 @@ import java.net.URLConnection;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-
-
-
+/*
+    Classe de auxílio para baixar e descompactar cada arquivo zip
+*/
 public class DescompactarZip {
     
+    /*
+        Método para descompactar e escrever o conteudo de um arquivo zip
+    */
     public File descompactarArquivo(String nomeArquivo, String codigoProfessor) throws FileNotFoundException, IOException {
         
         byte[] buffer = new byte[1024];
         
+        //baixa o arquivo zip e descompacta o curriculo.xml
         File arquivoZip = baixarArquivo(nomeArquivo,codigoProfessor);
         ZipFile zip = new ZipFile(arquivoZip);
         ZipEntry entrada = zip.getEntry("curriculo.xml");
@@ -29,6 +33,7 @@ public class DescompactarZip {
         InputStream is = zip.getInputStream(entrada);
         OutputStream os = new FileOutputStream(arquivoXML);
         
+        //Escreve o xml no disco
         int bytesLidos = 0;
         
         while ((bytesLidos = is.read(buffer)) > 0) {
@@ -38,19 +43,27 @@ public class DescompactarZip {
         is.close();
         os.close();
         zip.close();
-                
+        
+        //Deleta o arquivo zip
         if(arquivoZip.delete())
             System.out.println(codigoProfessor + ".zip deletado");
         return arquivoXML;        
     }    
-
+    
+    /*
+        Método para baixar e escrever um arquivo zip
+    */
     private File baixarArquivo(String nomeArquivo, String codigoProfessor) throws MalformedURLException, IOException {
      
+        //Cria uma conexão com a url do arquivo
         URL url1 = new URL(nomeArquivo);
         URLConnection con =  url1.openConnection();
+        
+        //Cria o arquivo zip
         File arquivo = new File(codigoProfessor+".zip");
         FileOutputStream fileOut = new FileOutputStream(arquivo);
          
+        //Escreve o arquivo zip no disco
         int c=0;
          
         do{
