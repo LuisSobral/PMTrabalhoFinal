@@ -87,12 +87,14 @@ public class DesenhaTabela extends JFrame {
     */
     public void adicionarProfessor(DefaultTableModel modelo, Professor professor) {
        
-        modelo.addRow(new Object[]{professor.getNome(),0,
-                                                   0,0,0,
-                                                   0,0,0,
-                                                   0,0,0,
-                                                   0,0,0,
-                                                   0,0,0,
+        Somatorio soma = new Somatorio();
+        
+        modelo.addRow(new Object[]{professor.getNome(),(int)soma.somarArtigosA1RevistaProfessor(professor),
+                                                   (int)soma.somarArtigosA2RevistaProfessor(professor),(int)soma.somarArtigosB1RevistaProfessor(professor),(int)soma.somarArtigosB2RevistaProfessor(professor),
+                                                   (int)soma.somarArtigosB3RevistaProfessor(professor),(int)soma.somarArtigosB4RevistaProfessor(professor),(int)soma.somarArtigosCRevistaProfessor(professor),
+                                                   (int)soma.somarArtigosNCRevistaProfessor(professor),(int)soma.somarArtigosA1EventoProfessor(professor),(int)soma.somarArtigosA2EventoProfessor(professor),
+                                                   (int)soma.somarArtigosB1EventoProfessor(professor),(int)soma.somarArtigosB2EventoProfessor(professor),(int)soma.somarArtigosB3EventoProfessor(professor),
+                                                   (int)soma.somarArtigosB4EventoProfessor(professor),(int)soma.somarArtigosCEventoProfessor(professor),(int)soma.somarArtigosNCEventoProfessor(professor),
                                                    professor.getNumeroBancasDoutorado(),professor.getNumeroBancasMestrado(),professor.getNumeroBancasGraduacao(),
                                                    professor.getNumeroOrientacaoDoutoradoConcluidas(),professor.getNumeroOrientacaoMestradoConcluidas(),professor.getNumeroOrientacaoGraduacaoConcluidas(),
                                                    professor.getNumeroOrientacaoDoutoradoAndamento(),professor.getNumeroOrientacaoMestradoAndamento(),professor.getNumeroOrientacaoGraduacaoAndamento()});
@@ -105,12 +107,12 @@ public class DesenhaTabela extends JFrame {
         
         Somatorio soma = new Somatorio();
         
-        modelo.addRow(new Object[] {"Total da linha ".concat(linha.getNome()),0,
-                                                   0,0,0,
-                                                   0,0,0,
-                                                   0,0,0,
-                                                   0,0,0,
-                                                   0,0,0,
+        modelo.addRow(new Object[] {"Total da linha ".concat(linha.getNome()),soma.somarArtigosA1RevistaLinha(linha),
+                                                   soma.somarArtigosA2RevistaLinha(linha),soma.somarArtigosB1RevistaLinha(linha),soma.somarArtigosB2RevistaLinha(linha),
+                                                   soma.somarArtigosB3RevistaLinha(linha),soma.somarArtigosB4RevistaLinha(linha),soma.somarArtigosCRevistaLinha(linha),
+                                                   soma.somarArtigosNCRevistaLinha(linha),soma.somarArtigosA1EventoLinha(linha),soma.somarArtigosA2EventoLinha(linha),
+                                                   soma.somarArtigosB1EventoLinha(linha),soma.somarArtigosB2EventoLinha(linha),soma.somarArtigosB3EventoLinha(linha),
+                                                   soma.somarArtigosB4EventoLinha(linha),soma.somarArtigosCEventoLinha(linha),soma.somarArtigosNCEventoLinha(linha),
                                                    soma.somarBancaDoutoradoLinhas(linha),soma.somarBancaMestradoLinhas(linha),soma.somarBancaGraduacaoLinhas(linha),
                                                    soma.somarOrientacoesDoutoradoConcluidasLinhas(linha),soma.somarOrientacoesMestradoConcluidasLinhas(linha),soma.somarOrientacoesGraduacaoConcluidasLinhas(linha),
                                                    soma.somarOrientacoesDoutoradoAndamentoLinhas(linha),soma.somarOrientacoesMestradoAndamentoLinhas(linha),soma.somarOrientacoesGraduacaoAndamentoLinhas(linha)});
@@ -124,12 +126,12 @@ public class DesenhaTabela extends JFrame {
         
         Somatorio soma = new Somatorio();
         
-        modelo.addRow(new Object[] {"Total do programa ".concat(programa.getNome()),0,
-                                                   0,0,0,
-                                                   0,0,0,
-                                                   0,0,0,
-                                                   0,0,0,
-                                                   0,0,0,
+        modelo.addRow(new Object[] {"Total do programa ".concat(programa.getNome()),soma.somarArtigosA1RevistaPrograma(programa),
+                                                   soma.somarArtigosA2RevistaPrograma(programa),soma.somarArtigosB1RevistaPrograma(programa),soma.somarArtigosB2RevistaPrograma(programa),
+                                                   soma.somarArtigosB3RevistaPrograma(programa),soma.somarArtigosB4RevistaPrograma(programa),soma.somarArtigosCRevistaPrograma(programa),
+                                                   soma.somarArtigosNCRevistaPrograma(programa),soma.somarArtigosA1EventoPrograma(programa),soma.somarArtigosA2EventoPrograma(programa),
+                                                   soma.somarArtigosB1EventoPrograma(programa),soma.somarArtigosB2EventoPrograma(programa),soma.somarArtigosB3EventoPrograma(programa),
+                                                   soma.somarArtigosB4EventoPrograma(programa),soma.somarArtigosCEventoPrograma(programa),soma.somarArtigosNCEventoPrograma(programa),
                                                    soma.somarBancaDoutoradoPrograma(programa),soma.somarBancaMestradoPrograma(programa),soma.somarBancaGraduacaoPrograma(programa),
                                                    soma.somarOrientacoesDoutoradoConcluidasPrograma(programa),soma.somarOrientacoesMestradoConcluidasPrograma(programa),soma.somarOrientacoesGraduacaoConcluidasPrograma(programa),
                                                    soma.somarOrientacoesDoutoradoAndamentoPrograma(programa),soma.somarOrientacoesMestradoAndamentoPrograma(programa),soma.somarOrientacoesGraduacaoAndamentoPrograma(programa)});

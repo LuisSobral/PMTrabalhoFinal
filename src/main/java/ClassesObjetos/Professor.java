@@ -142,8 +142,12 @@ public class Professor {
         return artigosEvento.get(indice);
     }
     
+    public List<Artigo> pegaArtigoEvento() {
+        return artigosEvento;
+    }
+    
     public void adicionaArtigoRevista(Artigo artigo) {
-        artigosEvento.add(artigo);
+        artigosRevista.add(artigo);
     }
     
     public Iterable<Artigo> getArtigosRevista() {
@@ -152,6 +156,10 @@ public class Professor {
     
     public Artigo pegaArtigoRevistaIndice(int indice) {
         return artigosRevista.get(indice);
+    }
+    
+    public List<Artigo> pegaArtigoRevista() {
+        return artigosRevista;
     }
     
 }

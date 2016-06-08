@@ -45,8 +45,7 @@ public class DescompactarZip {
         zip.close();
         
         //Deleta o arquivo zip
-        if(arquivoZip.delete())
-            System.out.println(codigoProfessor + ".zip deletado");
+        arquivoZip.delete();
         return arquivoXML;        
     }    
     

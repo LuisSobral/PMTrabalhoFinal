@@ -150,8 +150,7 @@ public class LeituraXML {
                 procurarTag(professor, filhosRoot, anoInicio, anoFim);
                 
                 //Deleta arquivo xml do curriculo baixado e escrito no disco
-                if(arquivoXML.delete())
-                    System.out.println("Currículo do Professor: " + professor.getNome() + " analisado.");
+                arquivoXML.delete();
             }
     }
     
@@ -265,23 +264,23 @@ public class LeituraXML {
                     if((anoTrabalho >= anoIni) && (anoTrabalho <= anoF))
                         //Adiciona elemento como filho que será usado
                         filhosUsados.add(filhosTrabalhosEmEventos.get(contadorFilhosTrabalhoEmEventos));
-                }
-            }
-            
-            //Para cada um dos filhos válidos
-            for(int contadorFilhosUsados=0; contadorFilhosUsados<filhosUsados.size(); contadorFilhosUsados++) {
-                
-                //Cria lista de elementos filhos "TRABALHO-EM-EVENTO"
-                List<Element> filhosArtigos = filhosUsados.get(contadorFilhosUsados).getChildren();
-                
-                //Para cada um determina o nome do evento que foi publicado, seta esse nome como no regex do Artigo
-                //Adiciona esse artigo a lista de ArtigosEvento do professor
-                for(int contadorFilhosArtigos = 0; contadorFilhosArtigos < filhosArtigos.size(); contadorFilhosArtigos++) {
-                    if(filhosArtigos.get(contadorFilhosArtigos).getName().equals("DETALHAMENTO-DO-TRABALHO")) {
-                        Artigo artigo = new Artigo("",filhosArtigos.get(contadorFilhosArtigos).getAttributeValue("NOME-DO-EVENTO"));
-                        professor.adicionaArtigoEvento(artigo);
-                    }
                 }   
+            }
+        }
+        
+        //Para cada um dos filhos válidos
+        for(int contadorFilhosUsados=0; contadorFilhosUsados<filhosUsados.size(); contadorFilhosUsados++) {
+                
+            //Cria lista de elementos filhos "TRABALHO-EM-EVENTO"
+            List<Element> filhosArtigos = filhosUsados.get(contadorFilhosUsados).getChildren();
+                
+            //Para cada um determina o nome do evento que foi publicado, seta esse nome como no regex do Artigo
+            //Adiciona esse artigo a lista de ArtigosEvento do professor
+            for(int contadorFilhosArtigos = 0; contadorFilhosArtigos < filhosArtigos.size(); contadorFilhosArtigos++) {
+                if(filhosArtigos.get(contadorFilhosArtigos).getName().equals("DETALHAMENTO-DO-TRABALHO")) {
+                    Artigo artigo = new Artigo("",filhosArtigos.get(contadorFilhosArtigos).getAttributeValue("NOME-DO-EVENTO"));
+                    professor.adicionaArtigoEvento(artigo);
+                }
             }
         }
     }
@@ -312,17 +311,17 @@ public class LeituraXML {
                         filhosUsados.add(filhosArtigosPublicados.get(contadorFilhosArtigosPublicados));
                 }
             }
-            
-            for(int contadorFilhosUsados=0; contadorFilhosUsados<filhosUsados.size(); contadorFilhosUsados++) {
-                List<Element> filhosArtigo = filhosUsados.get(contadorFilhosUsados).getChildren();
+        }
+        
+        for(int contadorFilhosUsados=0; contadorFilhosUsados<filhosUsados.size(); contadorFilhosUsados++) {
+            List<Element> filhosArtigo = filhosUsados.get(contadorFilhosUsados).getChildren();
                 
-                //Para cada um determina o nome da revista que foi publicado, seta esse nome como no regex do Artigo
-                //Adiciona esse artigo a lista de ArtigosEvento do professor
-                for(int contadorFilhosArtigo = 0; contadorFilhosArtigo < filhosArtigo.size(); contadorFilhosArtigo++) {
-                    if(filhosArtigo.get(contadorFilhosArtigo).getName().equals("DETALHAMENTO-DO-ARTIGO")) {
-                        Artigo artigo = new Artigo("",filhosArtigo.get(contadorFilhosArtigo).getAttributeValue("TITULO-DO-PERIODICO-OU-REVISTA"));
-                        professor.adicionaArtigoRevista(artigo);
-                    }
+            //Para cada um determina o nome da revista que foi publicado, seta esse nome como no regex do Artigo
+            //Adiciona esse artigo a lista de ArtigosEvento do professor
+            for(int contadorFilhosArtigo = 0; contadorFilhosArtigo < filhosArtigo.size(); contadorFilhosArtigo++) {
+                if(filhosArtigo.get(contadorFilhosArtigo).getName().equals("DETALHAMENTO-DO-ARTIGO")) {
+                    Artigo artigo = new Artigo("",filhosArtigo.get(contadorFilhosArtigo).getAttributeValue("TITULO-DO-PERIODICO-OU-REVISTA"));
+                    professor.adicionaArtigoRevista(artigo);
                 }
             }
         }
@@ -572,5 +571,39 @@ public class LeituraXML {
                     break;
             }
         }
+    }
+    
+    public void classificarArtigos(Professor professor) throws SAXException, ParserConfigurationException, IOException {
+        
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();        
+        DocumentBuilder dombuilder = factory.newDocumentBuilder();
+        
+        //Recebe o arquivo xml
+        org.w3c.dom.Document docProgramas = (org.w3c.dom.Document) dombuilder.parse("https://s3.amazonaws.com/posgraduacao/qualis.xml");
+        DOMBuilder jdomBuilder = new DOMBuilder();
+        
+        Document jdomDocument = jdomBuilder.build(docProgramas);
+        
+        //Pega o elemento do root do xml
+        Element root = jdomDocument.getRootElement();
+        
+        //Pega os filhos linha do elemento root
+        List<Element> filhosRoot = root.getChildren();
+        
+        //Para cada entrada do xml qualis procura se sua regex é igual a regex de cada artigo do professor
+        for(int contadorEntry = 0; contadorEntry < filhosRoot.size(); contadorEntry++) {
+            
+            //Procura na lista de artigos de Eventos
+            for(Artigo artigo : professor.getArtigosEventos())
+               if(artigo.getRegex().equalsIgnoreCase(filhosRoot.get(contadorEntry).getAttributeValue("regex")))
+                artigo.setClasse(filhosRoot.get(contadorEntry).getAttributeValue("class"));
+            
+            //Procura na lista de artigos de Revista
+            for(Artigo artigo : professor.getArtigosRevista())
+               if(artigo.getRegex().equalsIgnoreCase(filhosRoot.get(contadorEntry).getAttributeValue("regex")))
+                artigo.setClasse(filhosRoot.get(contadorEntry).getAttributeValue("class"));
+                   
+        }
+        
     }
 }

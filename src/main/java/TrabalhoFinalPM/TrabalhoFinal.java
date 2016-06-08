@@ -2,6 +2,8 @@ package TrabalhoFinalPM;
 
 import ClasseDeTabela.DesenhaTabela;
 import ClassesDeXML.LeituraXML;
+import ClassesObjetos.LinhaDePesquisa;
+import ClassesObjetos.Professor;
 import ClassesObjetos.Programa;
 
 import java.io.IOException;
@@ -17,9 +19,6 @@ public class TrabalhoFinal {
         Programa programa = new Programa();
         LeituraXML xml = new LeituraXML();
         
-        //args[1] = "2013";
-        //args[2] = "2015";
-        
         //Faz a leitura do xml com os programas de pós graduação
         xml.leituraDeProgramas(programa);
         
@@ -28,6 +27,11 @@ public class TrabalhoFinal {
         
         //Faz a leitura dos curriculos de cada professor
         xml.leituraDeCurriculos(programa,"2013","2015");
+        
+        //Para cada professor faz a classificação dos seus artigos
+        for(LinhaDePesquisa linha : programa.getLinhas())
+            for(Professor professor : linha.getProfessores())
+                    xml.classificarArtigos(professor);
         
         //Mostra a tabela com os dados analisados
         DesenhaTabela tabela = new DesenhaTabela();
