@@ -18,7 +18,7 @@ public class LeituraXMLTest {
         
         Programa programaTest = new Programa("PPGI-UNIRIO");
         Programa programa = new Programa();
-        LeituraXML xml = new LeituraXML();
+        LerCurriculo xml = new LerCurriculo();
         xml.leituraDeProgramas(programa);
         
         assertEquals(programa.getNome(),programaTest.getNome());        
@@ -28,7 +28,7 @@ public class LeituraXMLTest {
     public void testLeituraDeLinhas() throws ParserConfigurationException, SAXException, IOException {
         
         Programa programa = new Programa();
-        LeituraXML xml = new LeituraXML();
+        LerCurriculo xml = new LerCurriculo();
         xml.leituraDeProgramas(programa);
         xml.leituraDeLinhasEProfessores(programa);
         
@@ -46,7 +46,7 @@ public class LeituraXMLTest {
     public void testLeituraDeProfessores() throws ParserConfigurationException, SAXException, IOException {
         
         Programa programa = new Programa();
-        LeituraXML xml = new LeituraXML();
+        LerCurriculo xml = new LerCurriculo();
         xml.leituraDeProgramas(programa);
         xml.leituraDeLinhasEProfessores(programa);
         

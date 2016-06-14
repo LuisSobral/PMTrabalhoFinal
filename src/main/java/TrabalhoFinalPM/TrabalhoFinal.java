@@ -1,8 +1,12 @@
 package TrabalhoFinalPM;
 
 import ClasseDeTabela.DesenhaTabela;
-import ClassesDeXML.LeituraXML;
+import ClassesDeXML.LerCurriculo;
+import ClassesDeXML.LerLinhas;
+import ClassesDeXML.LerProgramas;
+import ClassesDeXML.LerQualis;
 import ClassesObjetos.LinhaDePesquisa;
+import ClassesObjetos.PosGraduacao;
 import ClassesObjetos.Professor;
 import ClassesObjetos.Programa;
 
@@ -16,27 +20,30 @@ public class TrabalhoFinal {
 
     public static void main(String[] args) throws JDOMException, IOException, ParserConfigurationException, SAXException {
     
-        Programa programa = new Programa();
-        LeituraXML xml = new LeituraXML();
+        PosGraduacao pos = new PosGraduacao();
+        LerProgramas xmlProgramas = new LerProgramas();
+        LerLinhas xmlLinhas = new LerLinhas();
+        LerCurriculo xmlCurriculos = new LerCurriculo();
+        LerQualis xmlQualis = new LerQualis();
         
         //Faz a leitura do xml com os programas de pós graduação
-        xml.leituraDeProgramas(programa);
+        xmlProgramas.leituraDeProgramas(pos);
+                
+        int anoInicio = Integer.parseInt("2013");
+        int anoFim = Integer.parseInt("2015");
         
         //Faz a leitura do xml com as linhas de pesqueisa e cada um de seus professores
-        xml.leituraDeLinhasEProfessores(programa);
-        
         //Faz a leitura dos curriculos de cada professor
-        xml.leituraDeCurriculos(programa,"2013","2015");
-        
-        //Para cada professor faz a classificação dos seus artigos
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores())
-                    xml.classificarArtigos(professor);
-        
-        //Mostra a tabela com os dados analisados
-        DesenhaTabela tabela = new DesenhaTabela();
-        tabela.criaJanela(programa);
-        
+        for(Programa programa : pos.getProgramas())
+            if(programa.getNome().equals("PPGI-UNIRIO")) {
+                xmlLinhas.leituraDeLinhas(programa);
+                xmlCurriculos.leituraDeCurriculos(programa,anoInicio,anoFim);
+                xmlQualis.classificarArtigos(programa);
+                
+                //Mostra a tabela com os dados analisados
+                DesenhaTabela tabela = new DesenhaTabela();
+                tabela.criaJanela(programa);
+            }        
     }
     
 }
