@@ -162,7 +162,228 @@ public class Professor {
         return artigosRevista;
     }
     
-}
-
+    /*
+        Soma de aritgos A1 evento de cada professor
+    */
+    public double somarArtigosA1EventoProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosEventos())
+            if(artigo.getClasse().equals("A1"))
+                soma++;
+        
+        return soma;
+    }
     
+    /*
+        Soma de aritgos A2 evento de cada professor
+    */
+    public double somarArtigosA2EventoProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosEventos())
+            if(artigo.getClasse().equals("A2"))
+                soma++;
+        
+        return soma;
+    }
     
+    /*
+        Soma de aritgos B1 evento de cada professor
+    */
+    public double somarArtigosB1EventoProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosEventos())
+            if(artigo.getClasse().equals("B1"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos B2 evento de cada professor
+    */
+    public double somarArtigosB2EventoProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosEventos())
+            if(artigo.getClasse().equals("B2"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos B3 evento de cada professor
+    */
+    public double somarArtigosB3EventoProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosEventos())
+            if(artigo.getClasse().equals("B3"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos B4 evento de cada professor
+    */
+    public double somarArtigosB4EventoProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosEventos())
+            if(artigo.getClasse().equals("B4"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos C de eventos de cada professor
+    */
+    public double somarArtigosCEventoProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosEventos())
+            if(artigo.getClasse().equals("C"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos NC evento de cada professor
+    */
+    public double somarArtigosNCEventoProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosEventos())
+            if(artigo.getClasse().equals("NC"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos A1 de revistas de cada professor
+    */
+    public double somarArtigosA1RevistaProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosRevista())
+            if(artigo.getClasse().equals("A1"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos A2 de revistas de cada professor
+    */
+    public double somarArtigosA2RevistaProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosRevista())
+            if(artigo.getClasse().equals("A2"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos B1 de revistas de cada professor
+    */
+    public double somarArtigosB1RevistaProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosRevista())
+            if(artigo.getClasse().equals("B1"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos B2 de revistas de cada professor
+    */
+    public double somarArtigosB2RevistaProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosRevista())
+            if(artigo.getClasse().equals("B2"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos B3 de revistas de cada professor
+    */
+    public double somarArtigosB3RevistaProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosRevista())
+            if(artigo.getClasse().equals("B3"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos B4 de revistas de cada professor
+    */
+    public double somarArtigosB4RevistaProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosRevista())
+            if(artigo.getClasse().equals("B4"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos C de revistas de cada professor
+    */
+    public double somarArtigosCRevistaProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosRevista())
+            if(artigo.getClasse().equals("C"))
+                soma++;
+        
+        return soma;
+    }
+    
+    /*
+        Soma de aritgos NC de revistas de cada professor
+    */
+    public double somarArtigosNCRevistaProfessor(Professor professor) {
+        
+        double soma = 0;
+        
+        for(Artigo artigo : professor.getArtigosRevista())
+            if(artigo.getClasse().equals("NC"))
+                soma++;
+        
+        return soma;
+    }
+    
+}    
