@@ -9,8 +9,6 @@ import ClassesObjetos.Qualis;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -25,24 +23,38 @@ public class LerQualis {
     public void classificarArtigos(Programa programa) throws SAXException, ParserConfigurationException, IOException {
         
         Qualis qualis = new Qualis();
-              
+        int achou = 0;
         criarEntradas(qualis);
         
         for(LinhaDePesquisa linha : programa.getLinhas())
             for(Professor professor : linha.getProfessores()) {
-                for(Artigo artigo : professor.getArtigosEventos())
+                for(Artigo artigo : professor.getArtigosEventos()) {
                     for(int i=0; i<qualis.getArtigosEvento().size(); i++) {
-                        if(artigo.getRegex().matches("(?i)"+qualis.pegaRegexEvento(i)))
+                        if(artigo.getRegex().matches("(?i)"+qualis.pegaRegexEvento(i))) {
+                            achou = 1;
                             artigo.setClasse(qualis.pegaClasseEvento(i));
+                        }
+                    }
+                    
+                    if(achou == 0)
+                        System.out.println("Não existe regex para: "+artigo.getRegex());
+                    else
+                        achou = 0;
+                }
+                                
+                for(Artigo artigo : professor.getArtigosRevista()) {
+                    for(int i=0; i<qualis.getArtigosRevista().size(); i++) {
+                        if(artigo.getRegex().matches("(?i)"+qualis.pegaRegexRevista(i))) {
+                            achou = 1;
+                            artigo.setClasse(qualis.pegaClasseRevista(i));
+                        }
                     }
                 
-                for(Artigo artigo : professor.getArtigosRevista())
-                    for(int i=0; i<qualis.getArtigosRevista().size(); i++) {
-                        System.out.println(artigo.getRegex());
-                        System.out.println(qualis.pegaRegexRevista(i));
-                        if(artigo.getRegex().matches("(?i)"+qualis.pegaRegexRevista(i)))
-                            artigo.setClasse(qualis.pegaClasseRevista(i));
-                    }
+                    if(achou == 0)
+                        System.out.println("Não existe regex para: "+artigo.getRegex());
+                    else
+                        achou = 0;
+                }
             }
         
     }

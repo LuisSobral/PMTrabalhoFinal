@@ -1,6 +1,5 @@
 package ClassesObjetos;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,448 +44,450 @@ public class Programa {
     /*
         Soma as orientações de mestrado concluidas para cada programa
     */
-    public String somarOrientacoesMestradoConcluidasPrograma(Programa programa) {
+    public double somarOrientacoesMestradoConcluidasPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.getNumeroOrientacaoMestradoConcluidas();
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).getNumeroOrientacaoMestradoConcluidas();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma as orientações de doutorado concluidas para cada linha
     */
-    public String somarOrientacoesDoutoradoConcluidasPrograma(Programa programa) {
+    public double somarOrientacoesDoutoradoConcluidasPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
+                
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).getNumeroOrientacaoDoutoradoConcluidas();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.getNumeroOrientacaoDoutoradoConcluidas();
-                numeroProfessores++;
-            }
-        
-        return df2.format(soma/numeroProfessores);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;   
     }
     
     /*
         Soma as orientações de graduacao concluidas para cada programa
     */
-    public String somarOrientacoesGraduacaoConcluidasPrograma(Programa programa) {
+    public double somarOrientacoesGraduacaoConcluidasPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.getNumeroOrientacaoGraduacaoConcluidas();
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).getNumeroOrientacaoGraduacaoConcluidas();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma as orientações de mestrado em andamento para cada programa
     */
-    public String somarOrientacoesMestradoAndamentoPrograma(Programa programa) {
+    public double somarOrientacoesMestradoAndamentoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.getNumeroOrientacaoMestradoAndamento();
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).getNumeroOrientacaoMestradoAndamento();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma as orientações de doutorado em andamento para cada programa
     */
-    public String somarOrientacoesDoutoradoAndamentoPrograma(Programa programa) {
+    public double somarOrientacoesDoutoradoAndamentoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.getNumeroOrientacaoDoutoradoAndamento();
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).getNumeroOrientacaoDoutoradoAndamento();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma as orientações de graduacao em andamento para cada programa
     */
-    public String somarOrientacoesGraduacaoAndamentoPrograma(Programa programa) {
+    public double somarOrientacoesGraduacaoAndamentoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.getNumeroOrientacaoGraduacaoAndamento();
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).getNumeroOrientacaoGraduacaoAndamento();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma as bancas de doutorado em andamento para cada programa
     */
-    public String somarBancaDoutoradoPrograma(Programa programa) {
+    public double somarBancaDoutoradoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.getNumeroBancasDoutorado();
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).getNumeroBancasDoutorado();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma as bancas de mestrado para cada programa
     */
-    public String somarBancaMestradoPrograma(Programa programa) {
+    public double somarBancaMestradoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.getNumeroBancasMestrado();
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).getNumeroBancasMestrado();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma as bancas de graduacao para cada programa
     */
-    public String somarBancaGraduacaoPrograma(Programa programa) {
+    public double somarBancaGraduacaoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.getNumeroBancasGraduacao();
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).getNumeroBancasGraduacao();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos A1 de revistas do programa
     */
-    public String somarArtigosA1RevistaPrograma(Programa programa) {
+    public double somarArtigosA1RevistaPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosA1RevistaProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosA1RevistaProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos A2 de revistas do programa
     */
-    public String somarArtigosA2RevistaPrograma(Programa programa) {
+    public double somarArtigosA2RevistaPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosA2RevistaProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosA2RevistaProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos B1 de revistas do programa
     */
-    public String somarArtigosB1RevistaPrograma(Programa programa) {
+    public double somarArtigosB1RevistaPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosB1RevistaProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosB1RevistaProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos B2 de revistas do programa
     */
-    public String somarArtigosB2RevistaPrograma(Programa programa) {
+    public double somarArtigosB2RevistaPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosB2RevistaProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosB2RevistaProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos B3 de revistas do programa
     */
-    public String somarArtigosB3RevistaPrograma(Programa programa) {
+    public double somarArtigosB3RevistaPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosB3RevistaProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosB3RevistaProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
-    }/*
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+    }
+    
+    /*
         Soma de aritgos B4 de revistas do programa
     */
-    public String somarArtigosB4RevistaPrograma(Programa programa) {
+    public double somarArtigosB4RevistaPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosB4RevistaProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosB4RevistaProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos C de revistas do programa
     */
-    public String somarArtigosCRevistaPrograma(Programa programa) {
+    public double somarArtigosCRevistaPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosCRevistaProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosCRevistaProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos NC de revistas do programa
     */
-    public String somarArtigosNCRevistaPrograma(Programa programa) {
+    public double somarArtigosNCRevistaPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosNCRevistaProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosNCRevistaProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos A1 de eventos do programa
     */
-    public String somarArtigosA1EventoPrograma(Programa programa) {
+    public double somarArtigosA1EventoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosA1EventoProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosA1EventoProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos A2 de eventos do programa
     */
-    public String somarArtigosA2EventoPrograma(Programa programa) {
+    public double somarArtigosA2EventoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosA2EventoProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosA2EventoProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos B1 de eventos do programa
     */
-    public String somarArtigosB1EventoPrograma(Programa programa) {
+    public double somarArtigosB1EventoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosB1EventoProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosB1EventoProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos B2 de eventos do programa
     */
-    public String somarArtigosB2EventoPrograma(Programa programa) {
+    public double somarArtigosB2EventoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosB2EventoProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosB2EventoProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos B3 de eventos do programa
     */
-    public String somarArtigosB3EventoPrograma(Programa programa) {
+    public double somarArtigosB3EventoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosB3EventoProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosB3EventoProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos B4 de eventos do programa
     */
-    public String somarArtigosB4EventoPrograma(Programa programa) {
+    public double somarArtigosB4EventoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosB4EventoProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosB4EventoProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos C de eventos do programa
     */
-    public String somarArtigosCEventoPrograma(Programa programa) {
+    public double somarArtigosCEventoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosCEventoProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosCEventoProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
         Soma de aritgos NC de eventos do programa
     */
-    public String somarArtigosNCEventoPrograma(Programa programa) {
+    public double somarArtigosNCEventoPrograma() {
         
-        DecimalFormat df2 = new DecimalFormat("#.#");
         double soma = 0;
         int numeroProfessores = 0;
         
-        for(LinhaDePesquisa linha : programa.getLinhas())
-            for(Professor professor : linha.getProfessores()) {
-                soma = soma + professor.somarArtigosNCEventoProfessor(professor);
-                numeroProfessores++;
-            }
+        for(int i=0; i<linhas.size(); i++) {
+            for(int j=0;j<linhas.get(i).pegaProfessores().size();j++) 
+                soma = soma + linhas.get(i).pegaProfessores().get(j).somarArtigosNCEventoProfessor();
+            
+            numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
+        }
         
-        return df2.format(soma/numeroProfessores++);
+        return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
 }

@@ -165,12 +165,12 @@ public class Professor {
     /*
         Soma de aritgos A1 evento de cada professor
     */
-    public double somarArtigosA1EventoProfessor(Professor professor) {
+    public double somarArtigosA1EventoProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosEventos())
-            if(artigo.getClasse().equals("A1"))
+        for(int i=0; i<artigosEvento.size(); i++)
+            if(artigosEvento.get(i).getClasse().equals("A1"))
                 soma++;
         
         return soma;
@@ -179,26 +179,27 @@ public class Professor {
     /*
         Soma de aritgos A2 evento de cada professor
     */
-    public double somarArtigosA2EventoProfessor(Professor professor) {
+    public double somarArtigosA2EventoProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosEventos())
-            if(artigo.getClasse().equals("A2"))
+        for(int i=0; i<artigosEvento.size(); i++)
+            if(artigosEvento.get(i).getClasse().equals("A2"))
                 soma++;
         
         return soma;
+        
     }
     
     /*
         Soma de aritgos B1 evento de cada professor
     */
-    public double somarArtigosB1EventoProfessor(Professor professor) {
+    public double somarArtigosB1EventoProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosEventos())
-            if(artigo.getClasse().equals("B1"))
+        for(int i=0; i<artigosEvento.size(); i++)
+            if(artigosEvento.get(i).getClasse().equals("B1"))
                 soma++;
         
         return soma;
@@ -207,12 +208,12 @@ public class Professor {
     /*
         Soma de aritgos B2 evento de cada professor
     */
-    public double somarArtigosB2EventoProfessor(Professor professor) {
+    public double somarArtigosB2EventoProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosEventos())
-            if(artigo.getClasse().equals("B2"))
+        for(int i=0; i<artigosEvento.size(); i++)
+            if(artigosEvento.get(i).getClasse().equals("B2"))
                 soma++;
         
         return soma;
@@ -221,12 +222,12 @@ public class Professor {
     /*
         Soma de aritgos B3 evento de cada professor
     */
-    public double somarArtigosB3EventoProfessor(Professor professor) {
+    public double somarArtigosB3EventoProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosEventos())
-            if(artigo.getClasse().equals("B3"))
+        for(int i=0; i<artigosEvento.size(); i++)
+            if(artigosEvento.get(i).getClasse().equals("B3"))
                 soma++;
         
         return soma;
@@ -235,12 +236,12 @@ public class Professor {
     /*
         Soma de aritgos B4 evento de cada professor
     */
-    public double somarArtigosB4EventoProfessor(Professor professor) {
+    public double somarArtigosB4EventoProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosEventos())
-            if(artigo.getClasse().equals("B4"))
+        for(int i=0; i<artigosEvento.size(); i++)
+            if(artigosEvento.get(i).getClasse().equals("B4"))
                 soma++;
         
         return soma;
@@ -249,12 +250,12 @@ public class Professor {
     /*
         Soma de aritgos C de eventos de cada professor
     */
-    public double somarArtigosCEventoProfessor(Professor professor) {
+    public double somarArtigosCEventoProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosEventos())
-            if(artigo.getClasse().equals("C"))
+        for(int i=0; i<artigosEvento.size(); i++)
+            if(artigosEvento.get(i).getClasse().equals("C"))
                 soma++;
         
         return soma;
@@ -263,12 +264,12 @@ public class Professor {
     /*
         Soma de aritgos NC evento de cada professor
     */
-    public double somarArtigosNCEventoProfessor(Professor professor) {
+    public double somarArtigosNCEventoProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosEventos())
-            if(artigo.getClasse().equals("NC"))
+        for(int i=0; i<artigosEvento.size(); i++)
+            if(artigosEvento.get(i).getClasse().equals("NC"))
                 soma++;
         
         return soma;
@@ -277,12 +278,12 @@ public class Professor {
     /*
         Soma de aritgos A1 de revistas de cada professor
     */
-    public double somarArtigosA1RevistaProfessor(Professor professor) {
+    public double somarArtigosA1RevistaProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosRevista())
-            if(artigo.getClasse().equals("A1"))
+        for(int i=0; i<artigosRevista.size(); i++)
+            if(artigosRevista.get(i).getClasse().equals("A1"))
                 soma++;
         
         return soma;
@@ -291,12 +292,12 @@ public class Professor {
     /*
         Soma de aritgos A2 de revistas de cada professor
     */
-    public double somarArtigosA2RevistaProfessor(Professor professor) {
+    public double somarArtigosA2RevistaProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosRevista())
-            if(artigo.getClasse().equals("A2"))
+        for(int i=0; i<artigosRevista.size(); i++)
+            if(artigosRevista.get(i).getClasse().equals("A2"))
                 soma++;
         
         return soma;
@@ -305,12 +306,12 @@ public class Professor {
     /*
         Soma de aritgos B1 de revistas de cada professor
     */
-    public double somarArtigosB1RevistaProfessor(Professor professor) {
+    public double somarArtigosB1RevistaProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosRevista())
-            if(artigo.getClasse().equals("B1"))
+        for(int i=0; i<artigosRevista.size(); i++)
+            if(artigosRevista.get(i).getClasse().equals("B1"))
                 soma++;
         
         return soma;
@@ -319,12 +320,12 @@ public class Professor {
     /*
         Soma de aritgos B2 de revistas de cada professor
     */
-    public double somarArtigosB2RevistaProfessor(Professor professor) {
+    public double somarArtigosB2RevistaProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosRevista())
-            if(artigo.getClasse().equals("B2"))
+        for(int i=0; i<artigosRevista.size(); i++)
+            if(artigosRevista.get(i).getClasse().equals("B2"))
                 soma++;
         
         return soma;
@@ -333,12 +334,12 @@ public class Professor {
     /*
         Soma de aritgos B3 de revistas de cada professor
     */
-    public double somarArtigosB3RevistaProfessor(Professor professor) {
+    public double somarArtigosB3RevistaProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosRevista())
-            if(artigo.getClasse().equals("B3"))
+        for(int i=0; i<artigosRevista.size(); i++)
+            if(artigosRevista.get(i).getClasse().equals("B3"))
                 soma++;
         
         return soma;
@@ -347,12 +348,12 @@ public class Professor {
     /*
         Soma de aritgos B4 de revistas de cada professor
     */
-    public double somarArtigosB4RevistaProfessor(Professor professor) {
+    public double somarArtigosB4RevistaProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosRevista())
-            if(artigo.getClasse().equals("B4"))
+        for(int i=0; i<artigosRevista.size(); i++)
+            if(artigosRevista.get(i).getClasse().equals("B4"))
                 soma++;
         
         return soma;
@@ -361,12 +362,12 @@ public class Professor {
     /*
         Soma de aritgos C de revistas de cada professor
     */
-    public double somarArtigosCRevistaProfessor(Professor professor) {
+    public double somarArtigosCRevistaProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosRevista())
-            if(artigo.getClasse().equals("C"))
+        for(int i=0; i<artigosRevista.size(); i++)
+            if(artigosRevista.get(i).getClasse().equals("C"))
                 soma++;
         
         return soma;
@@ -375,12 +376,12 @@ public class Professor {
     /*
         Soma de aritgos NC de revistas de cada professor
     */
-    public double somarArtigosNCRevistaProfessor(Professor professor) {
+    public double somarArtigosNCRevistaProfessor() {
         
         double soma = 0;
         
-        for(Artigo artigo : professor.getArtigosRevista())
-            if(artigo.getClasse().equals("NC"))
+        for(int i=0; i<artigosRevista.size(); i++)
+            if(artigosRevista.get(i).getClasse().equals("NC"))
                 soma++;
         
         return soma;

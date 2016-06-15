@@ -1,6 +1,6 @@
 package TrabalhoFinalPM;
 
-import ClasseDeTabela.DesenhaTabela;
+import ClasseDeEscritaDeArquivo.EscreverArquivo;
 import ClassesDeXML.LerCurriculo;
 import ClassesDeXML.LerLinhas;
 import ClassesDeXML.LerProgramas;
@@ -41,9 +41,11 @@ public class TrabalhoFinal {
                 xmlQualis.classificarArtigos(programa);
                 
                 //Mostra a tabela com os dados analisados
-                DesenhaTabela tabela = new DesenhaTabela();
-                tabela.criaJanela(programa);
-            }        
+                EscreverArquivo tabela = new EscreverArquivo();
+                tabela.criaArquivo(programa);
+            }
+        
+        System.out.println("Análise concluída!");
     }
     
 }
