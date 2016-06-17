@@ -170,7 +170,7 @@ public class LinhaDePesquisaTest {
     }
     
     /**
-     * Teste do metodo 'somarArtigosA1RevistaLinha' da classe LinhaDePesquisa.
+     * Teste dos metodos de somarArtigosRevistaLinha da classe LinhaDePesquisa.
      */
     @Test
     public void testSomarArtigosA1RevistaLinha() {
@@ -275,7 +275,54 @@ public class LinhaDePesquisaTest {
     }
     
     @Test
-    public void testSomarArtigosA1RevistaLinhaClassesInvalidas() {
+    public void testSomarArtigosA1RevistaLinhaSemClasse() {
+        Professor professor1 = new Professor();
+        Professor professor2 = new Professor();
+        Professor professor3 = new Professor();
+        Professor professor4 = new Professor();
+        Professor professor5 = new Professor();
+        
+        Artigo artigo1 = new Artigo();
+        Artigo artigo2 = new Artigo();
+        Artigo artigo3 = new Artigo();
+        Artigo artigo4 = new Artigo();
+        Artigo artigo5 = new Artigo();
+        
+        LinhaDePesquisa linha = new LinhaDePesquisa();
+        
+        professor1.adicionaArtigoRevista(artigo1);
+        professor1.adicionaArtigoRevista(artigo2);
+        professor1.adicionaArtigoRevista(artigo3);
+        professor2.adicionaArtigoRevista(artigo1);
+        professor3.adicionaArtigoRevista(artigo4);
+        professor3.adicionaArtigoRevista(artigo5);
+        professor4.adicionaArtigoRevista(artigo1);
+        professor4.adicionaArtigoRevista(artigo2);
+        professor4.adicionaArtigoRevista(artigo3);
+        professor4.adicionaArtigoRevista(artigo4);
+        professor4.adicionaArtigoRevista(artigo5);
+        professor5.adicionaArtigoRevista(artigo3);
+        professor5.adicionaArtigoRevista(artigo2);
+        
+        linha.adicionaProfessor(professor1);
+        linha.adicionaProfessor(professor2);
+        linha.adicionaProfessor(professor3);
+        linha.adicionaProfessor(professor4);
+        linha.adicionaProfessor(professor5);        
+
+        double soma = 0;
+        //somaTotal = 0!
+        soma = professor1.somarArtigosA1RevistaProfessor()+professor2.somarArtigosA1RevistaProfessor()
+                +professor3.somarArtigosA1RevistaProfessor()+professor4.somarArtigosA1RevistaProfessor()
+                +professor5.somarArtigosA1RevistaProfessor();
+        
+        double media = soma/5;
+        
+        assertEquals(media, linha.somarArtigosA1RevistaLinha(), 0.001);
+    }
+    
+    @Test
+    public void testSomarArtigosRevistaLinhaClassesInvalidas() {
         Professor professor1 = new Professor();
         Professor professor2 = new Professor();
         Professor professor3 = new Professor();
@@ -307,6 +354,9 @@ public class LinhaDePesquisaTest {
         professor4.adicionaArtigoRevista(artigo3);
         professor4.adicionaArtigoRevista(artigo4);
         professor4.adicionaArtigoRevista(artigo5);
+        professor5.adicionaArtigoRevista(artigo3);
+        professor5.adicionaArtigoRevista(artigo5);
+        professor5.adicionaArtigoRevista(artigo1);
         
         linha.adicionaProfessor(professor1);
         linha.adicionaProfessor(professor2);
@@ -315,55 +365,11 @@ public class LinhaDePesquisaTest {
         linha.adicionaProfessor(professor5);        
 
         double soma = 0;
-        //somaTotal = 2+1+1+3+0 = 7!
-        soma = professor1.somarArtigosA1RevistaProfessor()+professor2.somarArtigosA1RevistaProfessor()
-                +professor3.somarArtigosA1RevistaProfessor()+professor4.somarArtigosA1RevistaProfessor()
-                +professor5.somarArtigosA1RevistaProfessor();
-        
-        double media = soma/5;
-        
-        assertEquals(media, linha.somarArtigosA1RevistaLinha(), 0.001);
-    }
-    
-    @Test
-    public void testSomarArtigosA1RevistaLinhaSemClasse() {
-        Professor professor1 = new Professor();
-        Professor professor2 = new Professor();
-        Professor professor3 = new Professor();
-        Professor professor4 = new Professor();
-        Professor professor5 = new Professor();
-        
-        Artigo artigo1 = new Artigo();
-        Artigo artigo2 = new Artigo();
-        Artigo artigo3 = new Artigo();
-        Artigo artigo4 = new Artigo();
-        Artigo artigo5 = new Artigo();
-        
-        LinhaDePesquisa linha = new LinhaDePesquisa();
-        
-        professor1.adicionaArtigoRevista(artigo1);
-        professor1.adicionaArtigoRevista(artigo2);
-        professor1.adicionaArtigoRevista(artigo3);
-        professor2.adicionaArtigoRevista(artigo1);
-        professor3.adicionaArtigoRevista(artigo4);
-        professor3.adicionaArtigoRevista(artigo5);
-        professor4.adicionaArtigoRevista(artigo1);
-        professor4.adicionaArtigoRevista(artigo2);
-        professor4.adicionaArtigoRevista(artigo3);
-        professor4.adicionaArtigoRevista(artigo4);
-        professor4.adicionaArtigoRevista(artigo5);
-        
-        linha.adicionaProfessor(professor1);
-        linha.adicionaProfessor(professor2);
-        linha.adicionaProfessor(professor3);
-        linha.adicionaProfessor(professor4);
-        linha.adicionaProfessor(professor5);        
-
-        double soma = 0;
-        //somaTotal = 2+1+1+3+0 = 7!
-        soma = professor1.somarArtigosA1RevistaProfessor()+professor2.somarArtigosA1RevistaProfessor()
-                +professor3.somarArtigosA1RevistaProfessor()+professor4.somarArtigosA1RevistaProfessor()
-                +professor5.somarArtigosA1RevistaProfessor();
+        //somaTotal = 0!
+        soma = professor1.somarArtigosA1RevistaProfessor()+professor2.somarArtigosA2RevistaProfessor()
+                +professor3.somarArtigosB1RevistaProfessor()+professor4.somarArtigosB2RevistaProfessor()
+                +professor5.somarArtigosB3RevistaProfessor()+professor4.somarArtigosB4RevistaProfessor()
+                +professor3.somarArtigosCRevistaProfessor()+professor2.somarArtigosNCRevistaProfessor();
         
         double media = soma/5;
         
