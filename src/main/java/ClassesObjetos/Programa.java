@@ -56,7 +56,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -74,7 +77,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;   
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -92,7 +98,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -110,7 +119,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -128,7 +140,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -146,7 +161,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -164,7 +182,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -182,7 +203,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -200,7 +224,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -218,7 +245,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -236,7 +266,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -254,7 +287,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -272,7 +308,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -290,7 +329,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -308,7 +350,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -326,7 +371,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -344,7 +392,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -362,7 +413,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -380,7 +434,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -398,7 +455,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -416,7 +476,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -434,7 +497,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -452,7 +518,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -470,7 +539,10 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
     
     /*
@@ -488,6 +560,9 @@ public class Programa {
             numeroProfessores = numeroProfessores + linhas.get(i).contaProfessores();
         }
         
-        return Math.round((soma/numeroProfessores)*1e1)/1e1;
+         if(soma == 0)
+             return 0.0;
+         else
+            return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
 }

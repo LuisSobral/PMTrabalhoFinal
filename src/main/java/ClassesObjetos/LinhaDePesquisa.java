@@ -55,7 +55,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).getNumeroOrientacaoMestradoConcluidas();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -69,7 +72,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).getNumeroOrientacaoDoutoradoConcluidas();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -83,7 +89,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).getNumeroOrientacaoGraduacaoConcluidas();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -97,7 +106,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).getNumeroOrientacaoMestradoAndamento();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -111,7 +123,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).getNumeroOrientacaoDoutoradoAndamento();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -125,7 +140,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).getNumeroOrientacaoGraduacaoAndamento();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -139,7 +157,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).getNumeroBancasDoutorado();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -153,7 +174,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).getNumeroBancasMestrado();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -167,7 +191,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).getNumeroBancasGraduacao();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -181,7 +208,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosA1RevistaProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -195,7 +225,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosA2RevistaProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -209,7 +242,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosB1RevistaProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -223,7 +259,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosB2RevistaProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -237,7 +276,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosB3RevistaProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -251,7 +293,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosB4RevistaProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -265,7 +310,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosCRevistaProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -279,7 +327,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosNCRevistaProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -293,7 +344,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosA1EventoProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -307,7 +361,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosA2EventoProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -321,7 +378,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosB1EventoProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -335,7 +395,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosB2EventoProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -349,7 +412,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosB3EventoProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;      
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;      
     }
     
     /*
@@ -363,7 +429,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosB4EventoProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -377,7 +446,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosCEventoProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     /*
@@ -391,7 +463,10 @@ public class LinhaDePesquisa {
         for(int i=0; i<professores.size(); i++)
             soma = soma + professores.get(i).somarArtigosNCEventoProfessor();
         
-        return Math.round((soma/professores.size())*1e1)/1e1;
+        if(soma == 0)
+            return 0.0;
+        else
+            return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
     public int contaProfessores() {
