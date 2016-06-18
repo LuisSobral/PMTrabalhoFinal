@@ -4,19 +4,22 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LinhaDePesquisaTest {
-        Professor professor1 = new Professor();
-        Professor professor2 = new Professor();
-        Professor professor3 = new Professor();
-        Professor professor4 = new Professor();
-        Professor professor5 = new Professor();
-        
-        Artigo artigo1 = new Artigo();
-        Artigo artigo2 = new Artigo();
-        Artigo artigo3 = new Artigo();
-        Artigo artigo4 = new Artigo();
-        Artigo artigo5 = new Artigo();
-        
-        LinhaDePesquisa linha = new LinhaDePesquisa();
+    Professor professor1 = new Professor();
+    Professor professor2 = new Professor();
+    Professor professor3 = new Professor();
+    Professor professor4 = new Professor();
+    Professor professor5 = new Professor();
+
+    Artigo artigo1 = new Artigo();
+    Artigo artigo2 = new Artigo();
+    Artigo artigo3 = new Artigo();
+    Artigo artigo4 = new Artigo();
+    Artigo artigo5 = new Artigo();
+
+    LinhaDePesquisa linha = new LinhaDePesquisa();
+    
+    double soma = 0;
+    double media = 0;
     /**
      * Teste do metodo 'somarOrientacoesMestradoConcluidasLinhas' da classe LinhaDePesquisa.
      */
@@ -35,10 +38,10 @@ public class LinhaDePesquisaTest {
         linha.adicionaProfessor(professor5);
         
         //soma = 3+8+6+5+10 = 32!
-        double soma = 32.0;
-        double media = soma/5;
+        soma = 32.0;
+        media = soma/5;
         
-        assertEquals(media, linha.somarOrientacoesMestradoConcluidasLinhas(), 0.001);
+        assertEquals(Math.round(media*1e1)/1e1, linha.somarOrientacoesMestradoConcluidasLinhas(), 0.001);
     }
     
     @Test
@@ -50,10 +53,10 @@ public class LinhaDePesquisaTest {
         linha.adicionaProfessor(professor5);
         
         //soma = 0!
-        double soma = 0.0;
-        double media = soma/5;
+        soma = 0.0;
+        media = soma/5;
         
-        assertEquals(media, linha.somarOrientacoesMestradoConcluidasLinhas(), 0.001);
+        assertEquals(Math.round(media*1e1)/1e1, linha.somarOrientacoesMestradoConcluidasLinhas(), 0.001);
     }
     
     /**
@@ -74,10 +77,10 @@ public class LinhaDePesquisaTest {
         linha.adicionaProfessor(professor5);
         
         //soma = 7+13+0+2+1 = 23!
-        double soma = 23.0;
-        double media = soma/5;
+        soma = 23.0;
+        media = soma/5;
         
-        assertEquals(media, linha.somarOrientacoesMestradoAndamentoLinhas(), 0.001);
+        assertEquals(Math.round(media*1e1)/1e1, linha.somarOrientacoesMestradoAndamentoLinhas(), 0.001);
     }
 
     @Test
@@ -89,10 +92,10 @@ public class LinhaDePesquisaTest {
         linha.adicionaProfessor(professor5);
         
         //soma = 0!
-        double soma = 0.0;
-        double media = soma/5;
+        soma = 0.0;
+        media = soma/5;
         
-        assertEquals(media, linha.somarOrientacoesMestradoAndamentoLinhas(), 0.001);
+        assertEquals(Math.round(media*1e1)/1e1, linha.somarOrientacoesMestradoAndamentoLinhas(), 0.001);
     }
     
     /**
@@ -113,10 +116,10 @@ public class LinhaDePesquisaTest {
         linha.adicionaProfessor(professor5);
         
         //soma = 3+9+15+4+2 = 33!
-        double soma = 33.0;
-        double media = soma/5;
+        soma = 33.0;
+        media = soma/5;
         
-        assertEquals(media, linha.somarBancaDoutoradoLinhas(), 0.001);
+        assertEquals(Math.round(media*1e1)/1e1, linha.somarBancaDoutoradoLinhas(), 0.001);
     }
     
     @Test
@@ -128,10 +131,10 @@ public class LinhaDePesquisaTest {
         linha.adicionaProfessor(professor5);
         
         //soma = 0!
-        double soma = 0.0;
-        double media = soma/5;
+        soma = 0.0;
+        media = soma/5;
         
-        assertEquals(media, linha.somarBancaDoutoradoLinhas(), 0.001);
+        assertEquals(Math.round(media*1e1)/1e1, linha.somarBancaDoutoradoLinhas(), 0.001);
     }
     
     /**
@@ -163,15 +166,14 @@ public class LinhaDePesquisaTest {
         linha.adicionaProfessor(professor4);
         linha.adicionaProfessor(professor5);        
 
-        double soma = 0;
         //somaTotal = 3+1+2+5+0 = 11!
         soma = professor1.somarArtigosA1RevistaProfessor()+professor2.somarArtigosA1RevistaProfessor()
                 +professor3.somarArtigosA1RevistaProfessor()+professor4.somarArtigosA1RevistaProfessor()
                 +professor5.somarArtigosA1RevistaProfessor();
         
-        double media = soma/5;
+        media = soma/5;
         
-        assertEquals(media, linha.somarArtigosA1RevistaLinha(), 0.001);
+        assertEquals(Math.round(media*1e1)/1e1, linha.somarArtigosA1RevistaLinha(), 0.001);
     }
     
     @Test
@@ -200,15 +202,14 @@ public class LinhaDePesquisaTest {
         linha.adicionaProfessor(professor4);
         linha.adicionaProfessor(professor5);        
 
-        double soma = 0;
         //somaTotal = 2+1+1+3+0 = 7!
         soma = professor1.somarArtigosA1RevistaProfessor()+professor2.somarArtigosA1RevistaProfessor()
                 +professor3.somarArtigosA1RevistaProfessor()+professor4.somarArtigosA1RevistaProfessor()
                 +professor5.somarArtigosA1RevistaProfessor();
         
-        double media = soma/5;
+        media = soma/5;
         
-        assertEquals(media, linha.somarArtigosA1RevistaLinha(), 0.001);
+        assertEquals(Math.round(media*1e1)/1e1, linha.somarArtigosA1RevistaLinha(), 0.001);
     }
     
     @Test
@@ -233,15 +234,14 @@ public class LinhaDePesquisaTest {
         linha.adicionaProfessor(professor4);
         linha.adicionaProfessor(professor5);        
 
-        double soma = 0;
         //somaTotal = 0!
         soma = professor1.somarArtigosA1RevistaProfessor()+professor2.somarArtigosA1RevistaProfessor()
                 +professor3.somarArtigosA1RevistaProfessor()+professor4.somarArtigosA1RevistaProfessor()
                 +professor5.somarArtigosA1RevistaProfessor();
         
-        double media = soma/5;
+        media = soma/5;
         
-        assertEquals(media, linha.somarArtigosA1RevistaLinha(), 0.001);
+        assertEquals(Math.round(media*1e1)/1e1, linha.somarArtigosA1RevistaLinha(), 0.001);
     }
     
     @Test
@@ -273,16 +273,15 @@ public class LinhaDePesquisaTest {
         linha.adicionaProfessor(professor4);
         linha.adicionaProfessor(professor5);        
 
-        double soma = 0;
         //somaTotal = 0!
         soma = professor1.somarArtigosA1RevistaProfessor()+professor2.somarArtigosA2RevistaProfessor()
                 +professor3.somarArtigosB1RevistaProfessor()+professor4.somarArtigosB2RevistaProfessor()
                 +professor5.somarArtigosB3RevistaProfessor()+professor4.somarArtigosB4RevistaProfessor()
                 +professor3.somarArtigosCRevistaProfessor()+professor2.somarArtigosNCRevistaProfessor();
         
-        double media = soma/5;
+        media = soma/5;
         
-        assertEquals(media, linha.somarArtigosA1RevistaLinha(), 0.001);
+        assertEquals(Math.round(media*1e1)/1e1, linha.somarArtigosA1RevistaLinha(), 0.001);
     }
     
 }
