@@ -4,19 +4,24 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LinhaDePesquisaTest {
-    /**
-     * Teste do metodo 'somarOrientacoesMestradoConcluidasLinhas' da classe LinhaDePesquisa.
-     */
-    @Test
-    public void testSomarOrientacoesMestradoConcluidasLinhas() {
         Professor professor1 = new Professor();
         Professor professor2 = new Professor();
         Professor professor3 = new Professor();
         Professor professor4 = new Professor();
         Professor professor5 = new Professor();
         
-        LinhaDePesquisa linha = new LinhaDePesquisa();
+        Artigo artigo1 = new Artigo();
+        Artigo artigo2 = new Artigo();
+        Artigo artigo3 = new Artigo();
+        Artigo artigo4 = new Artigo();
+        Artigo artigo5 = new Artigo();
         
+        LinhaDePesquisa linha = new LinhaDePesquisa();
+    /**
+     * Teste do metodo 'somarOrientacoesMestradoConcluidasLinhas' da classe LinhaDePesquisa.
+     */
+    @Test
+    public void testSomarOrientacoesMestradoConcluidasLinhas() {
         professor1.setNumeroOrientacaoMestradoConcluidas(3);
         professor2.setNumeroOrientacaoMestradoConcluidas(8);
         professor3.setNumeroOrientacaoMestradoConcluidas(6);
@@ -37,15 +42,7 @@ public class LinhaDePesquisaTest {
     }
     
     @Test
-    public void testSomarOrientacoesMestradoConcluidasLinhasNulas() {
-        Professor professor1 = new Professor();
-        Professor professor2 = new Professor();
-        Professor professor3 = new Professor();
-        Professor professor4 = new Professor();
-        Professor professor5 = new Professor();
-        
-        LinhaDePesquisa linha = new LinhaDePesquisa();
-        
+    public void testSomarOrientacoesMestradoConcluidasLinhasNulas() {        
         linha.adicionaProfessor(professor1);
         linha.adicionaProfessor(professor2);
         linha.adicionaProfessor(professor3);
@@ -63,15 +60,7 @@ public class LinhaDePesquisaTest {
      * Teste do metodo 'somarOrientacoesMestradoAndamentoLinhas' da classe LinhaDePesquisa.
      */
     @Test
-    public void testSomarOrientacoesMestradoAndamentoLinhas() {
-        Professor professor1 = new Professor();
-        Professor professor2 = new Professor();
-        Professor professor3 = new Professor();
-        Professor professor4 = new Professor();
-        Professor professor5 = new Professor();
-        
-        LinhaDePesquisa linha = new LinhaDePesquisa();
-        
+    public void testSomarOrientacoesMestradoAndamentoLinhas() {        
         professor1.setNumeroOrientacaoMestradoAndamento(7);
         professor2.setNumeroOrientacaoMestradoAndamento(13);
         professor3.setNumeroOrientacaoMestradoAndamento(0);
@@ -92,15 +81,7 @@ public class LinhaDePesquisaTest {
     }
 
     @Test
-    public void testSomarOrientacoesMestradoAndamentoLinhasNulas() {
-        Professor professor1 = new Professor();
-        Professor professor2 = new Professor();
-        Professor professor3 = new Professor();
-        Professor professor4 = new Professor();
-        Professor professor5 = new Professor();
-        
-        LinhaDePesquisa linha = new LinhaDePesquisa();
-        
+    public void testSomarOrientacoesMestradoAndamentoLinhasNulas() {     
         linha.adicionaProfessor(professor1);
         linha.adicionaProfessor(professor2);
         linha.adicionaProfessor(professor3);
@@ -118,15 +99,7 @@ public class LinhaDePesquisaTest {
      * Teste do metodo 'somarBancaDoutoradoLinhas' da classe LinhaDePesquisa.
      */
     @Test
-    public void testSomarBancaDoutoradoLinhas() {
-        Professor professor1 = new Professor();
-        Professor professor2 = new Professor();
-        Professor professor3 = new Professor();
-        Professor professor4 = new Professor();
-        Professor professor5 = new Professor();
-        
-        LinhaDePesquisa linha = new LinhaDePesquisa();
-        
+    public void testSomarBancaDoutoradoLinhas() {        
         professor1.setNumeroBancasDoutorado(3);
         professor2.setNumeroBancasDoutorado(9);
         professor3.setNumeroBancasDoutorado(15);
@@ -147,15 +120,7 @@ public class LinhaDePesquisaTest {
     }
     
     @Test
-    public void testSomarBancaDoutoradoLinhasNulas() {
-        Professor professor1 = new Professor();
-        Professor professor2 = new Professor();
-        Professor professor3 = new Professor();
-        Professor professor4 = new Professor();
-        Professor professor5 = new Professor();
-        
-        LinhaDePesquisa linha = new LinhaDePesquisa();
-        
+    public void testSomarBancaDoutoradoLinhasNulas() {        
         linha.adicionaProfessor(professor1);
         linha.adicionaProfessor(professor2);
         linha.adicionaProfessor(professor3);
@@ -173,21 +138,7 @@ public class LinhaDePesquisaTest {
      * Teste dos metodos de somarArtigosRevistaLinha da classe LinhaDePesquisa.
      */
     @Test
-    public void testSomarArtigosA1RevistaLinha() {
-        Professor professor1 = new Professor();
-        Professor professor2 = new Professor();
-        Professor professor3 = new Professor();
-        Professor professor4 = new Professor();
-        Professor professor5 = new Professor();
-        
-        Artigo artigo1 = new Artigo();
-        Artigo artigo2 = new Artigo();
-        Artigo artigo3 = new Artigo();
-        Artigo artigo4 = new Artigo();
-        Artigo artigo5 = new Artigo();
-        
-        LinhaDePesquisa linha = new LinhaDePesquisa();
-        
+    public void testSomarArtigosA1RevistaLinha() {       
         artigo1.setClasse("A1");
         artigo2.setClasse("A1");
         artigo3.setClasse("A1");
@@ -224,21 +175,7 @@ public class LinhaDePesquisaTest {
     }
     
     @Test
-    public void testSomarArtigosA1RevistaLinhaClassesDiferentes() {
-        Professor professor1 = new Professor();
-        Professor professor2 = new Professor();
-        Professor professor3 = new Professor();
-        Professor professor4 = new Professor();
-        Professor professor5 = new Professor();
-        
-        Artigo artigo1 = new Artigo();
-        Artigo artigo2 = new Artigo();
-        Artigo artigo3 = new Artigo();
-        Artigo artigo4 = new Artigo();
-        Artigo artigo5 = new Artigo();
-        
-        LinhaDePesquisa linha = new LinhaDePesquisa();
-        
+    public void testSomarArtigosA1RevistaLinhaClassesDiferentes() {        
         artigo1.setClasse("A1");
         artigo2.setClasse("A2");
         artigo3.setClasse("A1");
@@ -275,21 +212,7 @@ public class LinhaDePesquisaTest {
     }
     
     @Test
-    public void testSomarArtigosA1RevistaLinhaSemClasse() {
-        Professor professor1 = new Professor();
-        Professor professor2 = new Professor();
-        Professor professor3 = new Professor();
-        Professor professor4 = new Professor();
-        Professor professor5 = new Professor();
-        
-        Artigo artigo1 = new Artigo();
-        Artigo artigo2 = new Artigo();
-        Artigo artigo3 = new Artigo();
-        Artigo artigo4 = new Artigo();
-        Artigo artigo5 = new Artigo();
-        
-        LinhaDePesquisa linha = new LinhaDePesquisa();
-        
+    public void testSomarArtigosA1RevistaLinhaSemClasse() {        
         professor1.adicionaArtigoRevista(artigo1);
         professor1.adicionaArtigoRevista(artigo2);
         professor1.adicionaArtigoRevista(artigo3);
@@ -322,21 +245,7 @@ public class LinhaDePesquisaTest {
     }
     
     @Test
-    public void testSomarArtigosRevistaLinhaClassesInvalidas() {
-        Professor professor1 = new Professor();
-        Professor professor2 = new Professor();
-        Professor professor3 = new Professor();
-        Professor professor4 = new Professor();
-        Professor professor5 = new Professor();
-        
-        Artigo artigo1 = new Artigo();
-        Artigo artigo2 = new Artigo();
-        Artigo artigo3 = new Artigo();
-        Artigo artigo4 = new Artigo();
-        Artigo artigo5 = new Artigo();
-        
-        LinhaDePesquisa linha = new LinhaDePesquisa();
-        
+    public void testSomarArtigosRevistaLinhaClassesInvalidas() {        
         artigo1.setClasse("LA");
         artigo2.setClasse("LO");
         artigo3.setClasse("LI");
