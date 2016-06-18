@@ -11,6 +11,8 @@ public class ProfessorTest {
     Artigo artigo3 = new Artigo();
     Artigo artigo4 = new Artigo();
     Artigo artigo5 = new Artigo();
+    
+    double soma = 0;
     /**
      * Teste do metodo 'somarArtigosA1RevistaProfessor' da classe Professor.
      */
@@ -29,7 +31,7 @@ public class ProfessorTest {
         professor.adicionaArtigoRevista(artigo5);
         
         //somaTotal = 5!
-        double soma = 5.0;
+        soma = 5.0;
         
         assertEquals(soma, professor.somarArtigosA1RevistaProfessor(), 0.001);
     }
@@ -49,7 +51,7 @@ public class ProfessorTest {
         professor.adicionaArtigoRevista(artigo5);
         
         //somaTotal = 3!
-        double soma = 3.0;
+        soma = 3.0;
         
         assertEquals(soma, professor.somarArtigosA1RevistaProfessor(), 0.001);
     }
@@ -63,7 +65,7 @@ public class ProfessorTest {
         professor.adicionaArtigoRevista(artigo5);
         
         //somaTotal = 0!
-        double soma = 0.0;
+        soma = 0.0;
         
         assertEquals(soma, professor.somarArtigosA1RevistaProfessor(), 0.001);
     }
@@ -83,7 +85,7 @@ public class ProfessorTest {
         professor.adicionaArtigoRevista(artigo5);
         
         //somaTotal = 0!
-        double soma = 0.0;
+        soma = 0.0;
         
         assertEquals(soma, professor.somarArtigosA1RevistaProfessor(), 0.001);
     }
