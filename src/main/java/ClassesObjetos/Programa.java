@@ -8,7 +8,6 @@ import java.util.List;
  */
 public class Programa {
     
-    //Nome do programa de pós-graduação
     private String nome;
     private List<LinhaDePesquisa> linhas;
 
@@ -21,22 +20,37 @@ public class Programa {
         this("");
     }
 
+    /*
+        Método que retorna o nome do programa
+    */
     public String getNome() {
         return nome;
     }
 
+    /*
+        Método que seta o nome do programa
+    */
     public void setNome(String nome) {
         this.nome = nome;
     }
     
+    /*
+        Método que adiciona uma linha
+    */
     public void adicionaLinha(LinhaDePesquisa linha) {
         linhas.add(linha);
     }
     
+    /*
+        Método que retorna a lista de linhas
+    */
     public Iterable<LinhaDePesquisa> getLinhas() {
         return linhas;
     }
     
+    /*
+        Método que retorna umaa linha
+    */
     public LinhaDePesquisa pegaLinhaDePesquisaIndice(int indice) {
         return linhas.get(indice);
     }
@@ -565,4 +579,12 @@ public class Programa {
          else
             return Math.round((soma/numeroProfessores)*1e1)/1e1;
     }
+    
+    /*
+        Método que retorna uma linha
+    */
+    public LinhaDePesquisa pegaLinha(int index) {
+        return linhas.get(index);
+    }
+    
 }

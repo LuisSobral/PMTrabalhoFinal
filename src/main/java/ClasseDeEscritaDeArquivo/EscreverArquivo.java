@@ -8,16 +8,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /*
-    Classe para criar a tabela e mostrar os dados necessários de cada professor, linha e programa
+    Classe para criar o relatório de resultado, mostrando os dados necessários de cada professor, linha e programa
 */
 public class EscreverArquivo {
     
     /*
-        Cria a tabela com suas colunas 
+        Método que cria o relatório
     */
-    public void criaArquivo(Programa programa) throws IOException{
+    public void criaArquivo(Programa programa, int anoInicio, int anoFim) throws IOException{
                            
-        FileWriter arq = new FileWriter("Relatório.txt");
+        FileWriter arq = new FileWriter(programa.getNome()+" "+anoInicio+" - "+anoFim+".txt");
         PrintWriter ArqG = new PrintWriter(arq);
         
         preencherTabela(ArqG,programa);
@@ -26,13 +26,9 @@ public class EscreverArquivo {
     }
     
     /*
-        Preenche cada uma das colunas da tabela
+        Método que preenche cada uma das colunas da tabela
     */
     public void preencherTabela(PrintWriter ArqG, Programa programa) {
-        
-        String quebraLinha = System.getProperty("line.separator");
-        ArqG.printf("Nome\tRA1\tRA2\tRB1\tRB2\tRB3\tRB4\tRC\tRNC\tEA1\tEA2\tEB1\tEB2\tEB3\tEB4\tEC\tENC"
-                + "\tBD\tBM\tBG\tODC\tOMC\tOGC\tODA\tOMA\tOGA"+quebraLinha);
         
                 for(LinhaDePesquisa linha : programa.getLinhas()) {
                     for(Professor professor : linha.getProfessores())
@@ -45,54 +41,54 @@ public class EscreverArquivo {
 	}
     
     /*
-        adiciona cada linha dos professores com seus atributos necessários
+        Método que adiciona cada linha dos professores com seus atributos necessários
     */
     public void adicionarProfessor(PrintWriter ArqG, Professor professor) {
         
         String quebraLinha = System.getProperty("line.separator");
-        ArqG.printf(professor.getNome()+"\t"+(int)professor.somarArtigosA1RevistaProfessor()+"\t"+
-                                                   (int)professor.somarArtigosA2RevistaProfessor()+"\t"+(int)professor.somarArtigosB1RevistaProfessor()+"\t"+(int)professor.somarArtigosB2RevistaProfessor()+"\t"+
-                                                   (int)professor.somarArtigosB3RevistaProfessor()+"\t"+(int)professor.somarArtigosB4RevistaProfessor()+"\t"+(int)professor.somarArtigosCRevistaProfessor()+"\t"+
-                                                   (int)professor.somarArtigosNCRevistaProfessor()+"\t"+(int)professor.somarArtigosA1EventoProfessor()+"\t"+(int)professor.somarArtigosA2EventoProfessor()+"\t"+
-                                                   (int)professor.somarArtigosB1EventoProfessor()+"\t"+(int)professor.somarArtigosB2EventoProfessor()+"\t"+(int)professor.somarArtigosB3EventoProfessor()+"\t"+
-                                                   (int)professor.somarArtigosB4EventoProfessor()+"\t"+(int)professor.somarArtigosCEventoProfessor()+"\t"+(int)professor.somarArtigosNCEventoProfessor()+"\t"+
-                                                   professor.getNumeroBancasDoutorado()+"\t"+professor.getNumeroBancasMestrado()+"\t"+professor.getNumeroBancasGraduacao()+"\t"+
-                                                   professor.getNumeroOrientacaoDoutoradoConcluidas()+"\t"+professor.getNumeroOrientacaoMestradoConcluidas()+"\t"+professor.getNumeroOrientacaoGraduacaoConcluidas()+"\t"+
-                                                   professor.getNumeroOrientacaoDoutoradoAndamento()+"\t"+professor.getNumeroOrientacaoMestradoAndamento()+"\t"+professor.getNumeroOrientacaoGraduacaoAndamento()+quebraLinha);
+        ArqG.printf("Nome professor: "+professor.getNome()+"\tRA1: "+(int)professor.somarArtigosA1RevistaProfessor()+"\tRA2: "+
+                                                   (int)professor.somarArtigosA2RevistaProfessor()+"\tRB1: "+(int)professor.somarArtigosB1RevistaProfessor()+"\tRB2: "+(int)professor.somarArtigosB2RevistaProfessor()+"\tRB3: "+
+                                                   (int)professor.somarArtigosB3RevistaProfessor()+"\tRB4: "+(int)professor.somarArtigosB4RevistaProfessor()+"\tRC: "+(int)professor.somarArtigosCRevistaProfessor()+"\tRNC: "+
+                                                   (int)professor.somarArtigosNCRevistaProfessor()+"\tEA1: "+(int)professor.somarArtigosA1EventoProfessor()+"\tEA2: "+(int)professor.somarArtigosA2EventoProfessor()+"\tEB1: "+
+                                                   (int)professor.somarArtigosB1EventoProfessor()+"\tEB2: "+(int)professor.somarArtigosB2EventoProfessor()+"\tEB3: "+(int)professor.somarArtigosB3EventoProfessor()+"\tEB4: "+
+                                                   (int)professor.somarArtigosB4EventoProfessor()+"\tEC: "+(int)professor.somarArtigosCEventoProfessor()+"\tENC: "+(int)professor.somarArtigosNCEventoProfessor()+"\tBD: "+
+                                                   professor.getNumeroBancasDoutorado()+"\tBM: "+professor.getNumeroBancasMestrado()+"\tBG: "+professor.getNumeroBancasGraduacao()+"\tODC: "+
+                                                   professor.getNumeroOrientacaoDoutoradoConcluidas()+"\tOMC: "+professor.getNumeroOrientacaoMestradoConcluidas()+"\tOGC: "+professor.getNumeroOrientacaoGraduacaoConcluidas()+"\tODA: "+
+                                                   professor.getNumeroOrientacaoDoutoradoAndamento()+"\tOMA: "+professor.getNumeroOrientacaoMestradoAndamento()+"\tOGA: "+professor.getNumeroOrientacaoGraduacaoAndamento()+quebraLinha);
     }
     
     /*
-        adiciona cada linha de linha de pesquisa com seus atributos necessários
+        Método que adiciona cada linha de linha de pesquisa com seus atributos necessários
     */
     public void adicionarLinhaDePesquisa (PrintWriter ArqG, LinhaDePesquisa linha) {
         
         String quebraLinha = System.getProperty("line.separator");
-        ArqG.printf("Total da linha ".concat(linha.getNome())+"\t"+linha.somarArtigosA1RevistaLinha()+"\t"+
-                                                   linha.somarArtigosA2RevistaLinha()+"\t"+linha.somarArtigosB1RevistaLinha()+"\t"+linha.somarArtigosB2RevistaLinha()+"\t"+
-                                                   linha.somarArtigosB3RevistaLinha()+"\t"+linha.somarArtigosB4RevistaLinha()+"\t"+linha.somarArtigosCRevistaLinha()+"\t"+
-                                                   linha.somarArtigosNCRevistaLinha()+"\t"+linha.somarArtigosA1EventoLinha()+"\t"+linha.somarArtigosA2EventoLinha()+"\t"+
-                                                   linha.somarArtigosB1EventoLinha()+"\t"+linha.somarArtigosB2EventoLinha()+"\t"+linha.somarArtigosB3EventoLinha()+"\t"+
-                                                   linha.somarArtigosB4EventoLinha()+"\t"+linha.somarArtigosCEventoLinha()+"\t"+linha.somarArtigosNCEventoLinha()+"\t"+
-                                                   linha.somarBancaDoutoradoLinhas()+"\t"+linha.somarBancaMestradoLinhas()+"\t"+linha.somarBancaGraduacaoLinhas()+"\t"+
-                                                   linha.somarOrientacoesDoutoradoConcluidasLinhas()+"\t"+linha.somarOrientacoesMestradoConcluidasLinhas()+"\t"+linha.somarOrientacoesGraduacaoConcluidasLinhas()+"\t"+
-                                                   linha.somarOrientacoesDoutoradoAndamentoLinhas()+"\t"+linha.somarOrientacoesMestradoAndamentoLinhas()+"\t"+linha.somarOrientacoesGraduacaoAndamentoLinhas()+quebraLinha);
+        ArqG.printf("Total da linha ".concat(linha.getNome())+"\tRA1: "+linha.somarArtigosA1RevistaLinha()+"\tRA2: "+
+                                                   linha.somarArtigosA2RevistaLinha()+"\tRB1: "+linha.somarArtigosB1RevistaLinha()+"\tRB2: "+linha.somarArtigosB2RevistaLinha()+"\tRB3: "+
+                                                   linha.somarArtigosB3RevistaLinha()+"\tRB4: "+linha.somarArtigosB4RevistaLinha()+"\tRC: "+linha.somarArtigosCRevistaLinha()+"\tRNC: "+
+                                                   linha.somarArtigosNCRevistaLinha()+"\tEA1: "+linha.somarArtigosA1EventoLinha()+"\tEA2: "+linha.somarArtigosA2EventoLinha()+"\tEB1: "+
+                                                   linha.somarArtigosB1EventoLinha()+"\tEB2: "+linha.somarArtigosB2EventoLinha()+"\tEB3: "+linha.somarArtigosB3EventoLinha()+"\tEB4: "+
+                                                   linha.somarArtigosB4EventoLinha()+"\tEC: "+linha.somarArtigosCEventoLinha()+"\tENC: "+linha.somarArtigosNCEventoLinha()+"\tBD: "+
+                                                   linha.somarBancaDoutoradoLinhas()+"\tBM: "+linha.somarBancaMestradoLinhas()+"\tBG: "+linha.somarBancaGraduacaoLinhas()+"\tODC: "+
+                                                   linha.somarOrientacoesDoutoradoConcluidasLinhas()+"\tOMC: "+linha.somarOrientacoesMestradoConcluidasLinhas()+"\tOGC: "+linha.somarOrientacoesGraduacaoConcluidasLinhas()+"\tODA: "+
+                                                   linha.somarOrientacoesDoutoradoAndamentoLinhas()+"\tOMA: "+linha.somarOrientacoesMestradoAndamentoLinhas()+"\tOGA: "+linha.somarOrientacoesGraduacaoAndamentoLinhas()+quebraLinha);
         
     }
     
     /*
-        adiciona a linha de programa com seus atributos necessários
+        Método que adiciona a linha de programa com seus atributos necessários
     */
     public void adicionaPrograma(PrintWriter ArqG, Programa programa) {
         
-        ArqG.printf("Total do programa ".concat(programa.getNome())+"\t"+programa.somarArtigosA1RevistaPrograma()+"\t"+
-                                                   programa.somarArtigosA2RevistaPrograma()+"\t"+programa.somarArtigosB1RevistaPrograma()+"\t"+programa.somarArtigosB2RevistaPrograma()+"\t"+
-                                                   programa.somarArtigosB3RevistaPrograma()+"\t"+programa.somarArtigosB4RevistaPrograma()+"\t"+programa.somarArtigosCRevistaPrograma()+"\t"+
-                                                   programa.somarArtigosNCRevistaPrograma()+"\t"+programa.somarArtigosA1EventoPrograma()+"\t"+programa.somarArtigosA2EventoPrograma()+"\t"+
-                                                   programa.somarArtigosB1EventoPrograma()+"\t"+programa.somarArtigosB2EventoPrograma()+"\t"+programa.somarArtigosB3EventoPrograma()+"\t"+
-                                                   programa.somarArtigosB4EventoPrograma()+"\t"+programa.somarArtigosCEventoPrograma()+"\t"+programa.somarArtigosNCEventoPrograma()+"\t"+
-                                                   programa.somarBancaDoutoradoPrograma()+"\t"+programa.somarBancaMestradoPrograma()+"\t"+programa.somarBancaGraduacaoPrograma()+"\t"+
-                                                   programa.somarOrientacoesDoutoradoConcluidasPrograma()+"\t"+programa.somarOrientacoesMestradoConcluidasPrograma()+"\t"+programa.somarOrientacoesGraduacaoConcluidasPrograma()+"\t"+
-                                                   programa.somarOrientacoesDoutoradoAndamentoPrograma()+"\t"+programa.somarOrientacoesMestradoAndamentoPrograma()+"\t"+programa.somarOrientacoesGraduacaoAndamentoPrograma());
+        ArqG.printf("Total do programa ".concat(programa.getNome())+"\tRA1: "+programa.somarArtigosA1RevistaPrograma()+"\t"+
+                                                   programa.somarArtigosA2RevistaPrograma()+"\tRB1: "+programa.somarArtigosB1RevistaPrograma()+"\tRB2: "+programa.somarArtigosB2RevistaPrograma()+"\tRB3: "+
+                                                   programa.somarArtigosB3RevistaPrograma()+"\tRB4: "+programa.somarArtigosB4RevistaPrograma()+"\tRC: "+programa.somarArtigosCRevistaPrograma()+"\tRNC: "+
+                                                   programa.somarArtigosNCRevistaPrograma()+"\tEA1: "+programa.somarArtigosA1EventoPrograma()+"\tEA2: "+programa.somarArtigosA2EventoPrograma()+"\tEB1: "+
+                                                   programa.somarArtigosB1EventoPrograma()+"\tEB2: "+programa.somarArtigosB2EventoPrograma()+"\tEB3: "+programa.somarArtigosB3EventoPrograma()+"\tEB4: "+
+                                                   programa.somarArtigosB4EventoPrograma()+"\tEC: "+programa.somarArtigosCEventoPrograma()+"\tENC: "+programa.somarArtigosNCEventoPrograma()+"\tBD: "+
+                                                   programa.somarBancaDoutoradoPrograma()+"\tBM: "+programa.somarBancaMestradoPrograma()+"\tBG: "+programa.somarBancaGraduacaoPrograma()+"\tODC: "+
+                                                   programa.somarOrientacoesDoutoradoConcluidasPrograma()+"\tOMC: "+programa.somarOrientacoesMestradoConcluidasPrograma()+"\tOGC: "+programa.somarOrientacoesGraduacaoConcluidasPrograma()+"\tODA: "+
+                                                   programa.somarOrientacoesDoutoradoAndamentoPrograma()+"\tOMA: "+programa.somarOrientacoesMestradoAndamentoPrograma()+"\tOGA: "+programa.somarOrientacoesGraduacaoAndamentoPrograma());
     }
     
 }

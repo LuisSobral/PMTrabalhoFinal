@@ -5,9 +5,7 @@ import ClassesDeXML.LerCurriculo;
 import ClassesDeXML.LerLinhas;
 import ClassesDeXML.LerProgramas;
 import ClassesDeXML.LerQualis;
-import ClassesObjetos.LinhaDePesquisa;
 import ClassesObjetos.PosGraduacao;
-import ClassesObjetos.Professor;
 import ClassesObjetos.Programa;
 
 import java.io.IOException;
@@ -42,7 +40,7 @@ public class TrabalhoFinal {
                 
                 //Mostra a tabela com os dados analisados
                 EscreverArquivo tabela = new EscreverArquivo();
-                tabela.criaArquivo(programa);
+                tabela.criaArquivo(programa, anoInicio, anoFim);
             }
         
         System.out.println("Análise concluída!");

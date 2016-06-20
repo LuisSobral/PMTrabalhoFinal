@@ -21,26 +21,44 @@ public class LinhaDePesquisa {
         this("");
     }
 
+    /*
+        Método que retorna o nome de uma linha
+    */
     public String getNome() {
         return nome;
     }
 
+    /*
+        Método que seta o nome de uma linha
+    */
     public void setNome(String nome) {
         this.nome = nome;
     }
     
+    /*
+        Método que adiciona professor a uma linha
+    */
     public void adicionaProfessor(Professor professor) {
         professores.add(professor);
     }
     
+    /*
+        Método que retorna lista de professores
+    */
     public Iterable<Professor> getProfessores() {
         return professores;
     }
     
+    /*
+        Método que retorna um determinado professor
+    */
     public Professor pegaProfessorIndice(int indice) {
         return professores.get(indice);
     }
     
+    /*
+        Método que retorna a lista de professores
+    */
     public List<Professor> pegaProfessores() {
         return professores;
     }
@@ -469,6 +487,9 @@ public class LinhaDePesquisa {
             return Math.round((soma/professores.size())*1e1)/1e1;
     }
     
+    /*
+        Método que retorna a quantidade de professores
+    */
     public int contaProfessores() {
         return professores.size();
     }

@@ -1,8 +1,5 @@
 package ClassesObjetos;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class EntradaQualis {
     
     private String regex;
@@ -17,18 +14,30 @@ public class EntradaQualis {
         this("","","");
     }
     
+    /*
+        Método que retorna a regex
+    */
     public String getRegex() {
         return regex;
     }
 
+    /*
+        Método que seta a regex
+    */
     public void setRegex(String regex) {
         this.regex = regex;
     }
 
+    /*
+        Método que retorna a classe
+    */
     public String getClasse() {
         return classe;
     }
 
+    /*
+        Método que seta a classe
+    */
     public void setClasse(String classe) {
         this.classe = classe;
     }    
